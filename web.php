@@ -2,20 +2,42 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/Main', function () {
+    return view('private');
+});
 
+Route::get('/Information', function () {
+    return view('Bear_Dream_Information');
+});
 
-Route::get('/Main', 'MyPlaceController@main');
+Route::get('/Conteiner', function () {
+    return view('Bear_Dream_Conteiner');
+});
 
-Route::get('/Information', 'MyPlaceController@information');
+Route::name('user.')->group(function(){
+    Route::view('/private', 'private')->middleware('auth')->name('private');
 
-Route::get('/Conteiner', 'MyPlaceController@conteiner');
+    Route::get('login', function(){
+        if(Auth::check()){
+            return redirect(route('user.private'));
+        }
+        return view('login');
+    })->name('login');
+
+    Route::get('registration', function(){
+        if(Auth::check()){
+            return redirect(route('user.private'));
+        }
+        return view('registration');
+    })->name('registration');
+
+    Route::post('/registration', [\App\Http\Controllers\register_controller::class, 'save']);
+
+    Route::post('/login', [\App\Http\Controllers\login_controller::class, 'login']);
+
+    Route::get('/logout', function(){
+        Auth::logout();
+        return redirect('/login');
+    })->name('logout');
+
+});
