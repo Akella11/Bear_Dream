@@ -198,33 +198,41 @@
     margin: 0% 32% 10%;
     cursor: pointer;
 }
-
-
 .input1{
     margin-top: 5%;
     margin-left: 11%;
     width: 80%;
+    color: #F5E9E9;
+    font-family: 'Labrada', serif;
 }
 .input2{
     margin-top: 1%;
     margin-left: 11%;
     width: 80%;
+    color: #F5E9E9;
+    font-family: 'Labrada', serif;
 }
 .input3{
     margin-top: 5%;
-    margin-left: 22.5%;
+    margin-left: 25%;
     width: 80%;
+    color: #F5E9E9;
+    font-family: 'Labrada', serif;
 }
 .input4{
     margin-top: 5%;
     margin-left: 11%;
     width: 80%;
+    color: #F5E9E9;
+    font-family: 'Labrada', serif;
 }
 .input5{
     height: 20%;
     width: 140%;
-    margin-top: 12.5%;
-    margin-right: 10%;
+    margin-top: 11%;
+    margin-right: 40%;
+    color: #F5E9E9;
+    font-family: 'Labrada', serif;
 }
 @media (min-width: 1300px){
     *{
@@ -322,7 +330,7 @@
       </div>
     </div>
   </div>
-  <div class="button1" >Сплатити</div>
+  <a href="Gratitude" class="button1">Сплатити</a>
   <div class="flex-container5">
     <div class="flex-container6">
       <p class="p7">Ми є тут</p>
