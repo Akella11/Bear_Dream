@@ -14,6 +14,10 @@ Route::get('/Conteiner', function () {
     return view('Bear_Dream_Conteiner');
 });
 
+Route::get('/Gratitude', function () {
+    return view('Bear_Dream_Gratitude');
+});
+
 Route::name('user.')->group(function(){
     Route::view('/private', 'private')->middleware('auth')->name('private');
 
